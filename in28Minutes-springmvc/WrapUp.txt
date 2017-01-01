@@ -1,0 +1,20 @@
+
+@RequestMapping --> mapping or requests from DispatcherServlet to specific controller and method 
+	 Example: @RequestMapping(value = "/login", method=RequestMethod.POST)
+
+@RequestParam --> parameter from request 
+     Example: @RequestParam String name 	 
+
+@SessionAttributes("name") --> svaki puta kada se stavi name u model, to je vidljivo cijeloj sesiji 	 
+ 
+	 
+ModelMap --> for transfering data from controller to view 	 
+
+Redirect --> okida controller metodu koja sluša /list-todos   
+	 @RequestMapping(value = "/add-todo", method=RequestMethod.POST)
+	 public String addTodo(ModelMap model) {
+		 return "redirect:list-todos";
+	 }
+	 
+Kad se koristi Springov command object kroz <form:form> npr. <form:form method="post" commandName="todo">
+tada todo klasa koja se proslijeduje mora imati defaultni konstruktor - public Todo(){}	 
